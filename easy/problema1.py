@@ -8,3 +8,6 @@ def twoSum(nums: list[int], target: int) -> list[int]:
                     retorno.append(num)
                     retorno.append(i)
                     return retorno
+                
+
+print(twoSum([1,2,3,4,5],7))
