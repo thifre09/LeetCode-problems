@@ -1,5 +1,10 @@
-nums = [1,1,2,3,4,4,5,5,5,5]
-    #  [1,2,3,4,5,_,_,_,_,_]
-nums = set(nums)
-nums = list(nums)
-print(nums)
+a = "asd"
+v = {
+    "a1": "srf",
+    "a2": "hyt",
+    "a3": "asd"
+}
+
+ba = {"a","s","d"}
+if set(a) in ba:
+    print("aba")
