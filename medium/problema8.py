@@ -5,7 +5,7 @@ class Solution:
         passou_sinal = False
 
         for t in s:
-            if t == " ":
+            if t == " " and passou_sinal == False:
                 continue
             elif t == "+" and passou_sinal == False:
                 sinal = "+"
@@ -19,17 +19,20 @@ class Solution:
             else:
                 break
 
-        if retorno != "":
+        if retorno != "" and sinal is not None:
+            retorno = sinal + retorno
+            retorno = int(retorno)
+        elif retorno != "":
             retorno = int(retorno)
         else:
             return 0
         
-        if sinal == "+":
-            return retorno
-        elif sinal == "-":
-            return -retorno
-        else:
-            return retorno
+        if retorno >= 2**31-1:
+            return 2**31-1
+        elif retorno <= -(2**31):
+            return -(2**31)
+        
+        return retorno
         
 t = Solution()
 print(t.myAtoi("42"))
