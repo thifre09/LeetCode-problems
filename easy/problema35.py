@@ -8,7 +8,7 @@ class Solution:
         high = len(nums)-1
         mid = low + (high-low)//2
 
-        while mid != high and mid != low:
+        while high >= low:
 
             mid = low + (high-low)//2
 
@@ -20,20 +20,9 @@ class Solution:
                 high = mid-1
 
         if high < 0 or low < 0:
-            return 0 
-        
-        if len(nums) == 1:
-            if nums[0] > target:
-                return 0 
-            elif nums[0] < target:
-                return 1
-            else:
-                return 0
+            return 0
 
-        if mid < low:
-            return low
-        elif mid > high:
-            return high
+        return low
             
 t = Solution()
-print(t.searchInsert(nums = [1], target = 1))
+print(t.searchInsert(nums = [1,2,3], target = 4))
