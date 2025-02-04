@@ -2,8 +2,6 @@ from typing import List
 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:
-        index = 0
-
         low = 0
         high = len(nums)-1
         mid = low + (high-low)//2
