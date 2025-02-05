@@ -27,13 +27,15 @@ class Solution:
         while True:
             mid2 = low2 + (high2-low2)//2
 
-            if nums[mid2] == target:
-                menor = mid2
+            if nums[low2] == target:
+                menor = low2
                 break
             elif nums[mid2] < target:
                 low1 = mid2 + 1
             elif nums[mid2] > target:
                 high1 = mid2 - 1
+            else:
+                low2 += 1
 
         # binary search na direita
 
@@ -43,15 +45,17 @@ class Solution:
         while True:
             mid2 = low2 + (high2-low2)//2
 
-            if nums[mid2] == target:
-                maior = mid2
+            if nums[high2] == target:
+                maior = high2
                 break
             elif nums[mid2] < target:
                 low1 = mid2 + 1
             elif nums[mid2] > target:
                 high1 = mid2 - 1
+            else:
+                high2 -= 1
 
         return [menor, maior]
     
 t = Solution()
-print(t.searchRange(nums = [7,8,8,8,8,8,8,8,8,8,8,9], target = 8))
+print(t.searchRange(nums = [1,2,2,2,2,3,4,5,5,5,5,6,7,8,9,10,11,12,12,12,12,12,13], target = 12))
